@@ -14,19 +14,6 @@ router.post("/", async(req,res)=>{
     }
 })
 
-//create image post
-
-router.post("/img", async(req,res)=>{
-    const newPostImg = new Post(req.body);
-    console.log(newPostImg);
-    try{
-        const savedPost = await newPostImg.save();
-        res.status(200).json(savedPost);
-    } catch(err){
-        res.status(500).json(err);
-    }
-})
-
 //update a post
 router.put("/:id", async(req,res)=>{
     try{
